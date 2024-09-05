@@ -22,7 +22,6 @@ RUN npm run build
 
 ## Production image
 FROM base AS prod
-ARG OXVIID
 # Move the compiled code
 COPY --from=build /app/dist/ ./
 
