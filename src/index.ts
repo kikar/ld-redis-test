@@ -6,4 +6,6 @@ import { RedisFeatureStore } from '@launchdarkly/node-server-sdk-redis';
     featureStore: RedisFeatureStore(),
   });
   await client.waitForInitialization({ timeout: 60 });
+
+  console.log('Client initialized');
 })();

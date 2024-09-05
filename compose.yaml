@@ -1,4 +1,12 @@
 services:
+  app:
+    build:
+      context: .
+      target: dev
+    volumes:
+      - .:/app
+    command: node --env-file=.env --inspect=0.0.0.0:9229 --watch --no-warnings --loader ts-node/esm /app/src/index.ts
+    network_mode: host
   redis:
     image: redis:7.0.5-alpine
     ports:
@@ -8,6 +16,7 @@ services:
     healthcheck:
       test: redis-cli ping
       interval: 5s
+    network_mode: host
 
 volumes:
   redis:
