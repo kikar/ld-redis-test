@@ -1,4 +1,3 @@
 # Steps to reproduce
 
-1. Create `.env` file with the `LD_KEY`
-2. Run `docker compose up`
+1. Run `LD_KEY=<your sdk key> docker compose up`

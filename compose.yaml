@@ -2,10 +2,10 @@ services:
   app:
     build:
       context: .
-      target: dev
-    volumes:
-      - .:/app
-    command: node --env-file=.env --inspect=0.0.0.0:9229 --watch --no-warnings --loader ts-node/esm /app/src/index.ts
+      target: build
+    environment:
+      - LD_KEY=$LD_KEY
+    command: node --watch --no-warnings --loader ts-node/esm /app/src/index.ts
     network_mode: host
   redis:
     image: redis:7.0.5-alpine

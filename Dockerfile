@@ -25,5 +25,5 @@ FROM base AS prod
 ARG OXVIID
 # Move the compiled code
 COPY --from=build /app/dist/ ./
-# Set max memory to 16GB
+
 CMD ["node", "/app/index.js"]
